@@ -69,8 +69,7 @@ const sitename = computed(() => appStore.publicSettings?.sitename || 'Monitor')
             viewBox="0 0 32 32"
             class="size-6 fill-foreground"
           >
-            <path fill-rule="evenodd" d="M9 3h14l6 9-13 17L3 12zM3 11.5h26v1.2H3z" />
-            <path fill-opacity=".45" d="M12.4 3h7.2l3.1 8.5H9.3z" />
+            <path fill-rule="evenodd" d="M9 3h14l6 9-13 17L3 12zM3 11.2h26v1.6H3z" />
           </svg>
         </div>
         <Avatar v-else class="size-8">
