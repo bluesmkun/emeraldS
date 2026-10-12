@@ -48,6 +48,7 @@ bun.lock
 .playwright-mcp
 .mimosa
 theme.tar.gz
+theme.tar.gz.sha256
 
 # Local AI workspace (memory, preview review shots)
 .workbuddy-ai/
