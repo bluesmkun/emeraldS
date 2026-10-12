@@ -1,13 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="emeraldS-gem" x1="6" y1="2" x2="26" y2="30" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#6ee7b7"/>
-      <stop offset=".45" stop-color="#10b981"/>
-      <stop offset="1" stop-color="#047857"/>
+    <linearGradient id="emeraldS-pulse" x1="2" y1="26" x2="30" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#047857"/>
+      <stop offset=".5" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#6ee7b7"/>
     </linearGradient>
   </defs>
-  <path fill="url(#emeraldS-gem)" d="M9 3h14l6 9-13 17L3 12z"/>
-  <path fill="#a7f3d0" fill-opacity=".82" d="M12.4 3h7.2l3.1 9H9.3z"/>
-  <path fill="#022c22" fill-opacity=".2" d="M3 12h26L16 29z"/>
-  <path fill="none" stroke="#d1fae5" stroke-opacity=".72" stroke-width="1.1" d="M3 12h26"/>
+  <path
+    fill="none" stroke="url(#emeraldS-pulse)" stroke-width="3.2"
+    stroke-linecap="round" stroke-linejoin="round"
+    d="M2.2 17.4h5.4l3.5-9.6 4.1 18 3.4-12.2 2.4 3.8h8.8"
+  />
 </svg>

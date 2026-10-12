@@ -47,28 +47,31 @@ export function getPingToneClass(value: number): string {
   return 'text-rose-600 dark:text-rose-400'
 }
 
+// 热力色带分档：用 --heat-1..5 这套低饱和色阶，别用 Tailwind 的 emerald/lime/yellow/rose
+// ——那几个色在 80~90% 不透明度下非常刺眼，小色带会被它们抢走视觉重心。
+// 阈值与下面两个函数一一对应，改档位记得两边一起改。
 function getLatencyToneClass(latency: number): string {
   if (latency <= 60)
-    return 'bg-emerald-600/90'
+    return 'bg-heat-1'
   if (latency <= 120)
-    return 'bg-green-500/80'
+    return 'bg-heat-2'
   if (latency <= 180)
-    return 'bg-lime-400/80'
+    return 'bg-heat-3'
   if (latency <= 240)
-    return 'bg-yellow-400/80'
-  return 'bg-rose-500/80'
+    return 'bg-heat-4'
+  return 'bg-heat-5'
 }
 
 function getLossToneClass(loss: number): string {
   if (loss <= 1)
-    return 'bg-emerald-600/90'
+    return 'bg-heat-1'
   if (loss <= 3)
-    return 'bg-green-500/80'
+    return 'bg-heat-2'
   if (loss <= 6)
-    return 'bg-lime-400/80'
+    return 'bg-heat-3'
   if (loss <= 9)
-    return 'bg-yellow-400/80'
-  return 'bg-rose-500/80'
+    return 'bg-heat-4'
+  return 'bg-heat-5'
 }
 
 function toNetworkDisplay(stat: NodePingPerTaskStat): NodePingNetworkDisplay {
@@ -108,7 +111,7 @@ export function useNodePingDisplay(
       return {
         key: `${point.time}-${index}`,
         className: value === null
-          ? 'bg-muted-foreground/15'
+          ? 'bg-heat-null'
           : metric === 'latency'
             ? getLatencyToneClass(value)
             : getLossToneClass(value),
@@ -134,7 +137,7 @@ export function useNodePingDisplay(
 
     return Array.from({ length: NODE_PING_BAR_COUNT }, (_, index) => ({
       key: `${metric}-empty-${index}`,
-      className: 'bg-muted-foreground/10',
+      className: 'bg-heat-null',
       tooltip,
     }))
   }

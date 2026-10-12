@@ -273,7 +273,7 @@ function openPingDialog() {
                 <span class="font-medium text-foreground/85">{{ latencyDisplay }}</span>
               </div>
               <div
-                class="grid h-3 items-end gap-[1px]"
+                class="grid h-2 items-end gap-[1px]"
                 :style="{ gridTemplateColumns: `repeat(${latencyRenderBars.length}, minmax(0, 1fr))` }"
               >
                 <DataTooltip
@@ -299,7 +299,7 @@ function openPingDialog() {
                 <span class="font-medium text-foreground/85">{{ lossDisplay }}</span>
               </div>
               <div
-                class="grid h-3 items-end gap-[1px]"
+                class="grid h-2 items-end gap-[1px]"
                 :style="{ gridTemplateColumns: `repeat(${lossRenderBars.length}, minmax(0, 1fr))` }"
               >
                 <DataTooltip

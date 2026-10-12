@@ -67,9 +67,13 @@ const sitename = computed(() => appStore.publicSettings?.sitename || 'Monitor')
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
-            class="size-6 fill-foreground"
+            class="size-6 text-foreground"
           >
-            <path fill-rule="evenodd" d="M9 3h14l6 9-13 17L3 12zM3 11.2h26v1.6H3z" />
+            <path
+              fill="none" stroke="currentColor" stroke-width="3.2"
+              stroke-linecap="round" stroke-linejoin="round"
+              d="M2.2 17.4h5.4l3.5-9.6 4.1 18 3.4-12.2 2.4 3.8h8.8"
+            />
           </svg>
         </div>
         <Avatar v-else class="size-8">
